@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>The hematopoietic stem cell aging</title>
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 33.1in 46.8in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 33.1in;
+height: 46.8in;
+text-align: justify;
+font-size: 43.875px;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #00808020;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 19.5px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 33.1in;
+height: calc(46.8in *  (1 - 0.15 - 0.075 - 0.01) );
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Rasa;
+margin-top: calc(46.8in *  0.15 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #008080;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #008080;
+}
+#title {
+font-size: 121.875px;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #0b4545;
+margin: 0;
+line-height: 85%;
+font-size: 1.14em;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #cc0000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #008080;
+margin: 0;
+line-height: 85%;
+font-size: 34px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #0b454575 33%,
+      #0b4545 50%,
+      #0b454575 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 33.1in;
+height: calc(46.8in * 0.15);
+position: absolute;
+background-color: #0b4545;
+color: #ffffff90;
+font-family: Special Elite;
+background-image: linear-gradient(#0b4545 50%,#008080);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(33.1in * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 165px;
+font-family: Special Elite;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 33.1in;
+height: 46.8in;
+padding: 0cm;
+}
+.main_bottom {
+width: 33.1in;
+height: calc(46.8in * 0.075);
+margin-top: calc(46.8in * (1 - 0.075));
+position: absolute;
+background-color: #0b4545;
+background-image: linear-gradient(#008080 10%, #0b4545);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+<h1 id="title"><strong>The hematopoietic stem cell aging</strong></h1><br>
+<h3 id="author" class="author">
+
+<strong>L. Hérault</strong><sup> 1 2, <a class="orcid" href="https://orcid.org/0000-0001-6499-2991"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
+
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:leonard.herault@inserm.fr">leonard.herault@inserm.fr</a> <br>
+     </h3>
+
+<h5 id="author_extra", class="author_extra">
+ A. Mazuel<sup>2</sup>
+ M. Poplineau<sup>2</sup>
+ N. Platet<sup>2</sup>
+ E. Remy<sup>1</sup>
+ E. Duprez<sup>2</sup>
+</h5>
+
+
+<p id="affiliation" class="affiliation">
+<sup>1</sup> I2M; Institut de Mathématiques de Marseille<br> <sup>2</sup> CRCM; Centre de Recherche en Cancérologie de Marseille
+</p>
+</div>
+
+<style>
+#main-img-left {
+ width: 20%;
+}
+#main-img-center {
+ width: 7%;
+}
+#main-img-right {
+ width: 20%;
+}
+</style>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Hematopoietic stem cells (HSCs) represent a rare population of cells residing in the Bone Marrow (BM) at the top of hematopoietic hierarchy. A critical balance is maintained between self-renewal and lineage differentiation of HSCs to maintain hematopoietic homeostasis. With aging, this balance is altered with an increase of long term HSCs <code>self-renewal</code> and a <code>myeloid biased</code> differentiation, which favors the appearance of myeloid leukemias and anemias. My thesis project aims to understand molecular mechanisms that cause this aged-related disequilibrium in the mouse.</p>
+<p><img src="/Users/leonard/Nextcloud/sysbioTraing/posterImages/bioContext2.png" alt="“biologicalContext”" style="width:95.0%" />
+<em>Aging of mouse HSC pool</em></p>
+<div id="objectives" class="section level2">
+<h2>Objectives</h2>
+<ol style="list-style-type: decimal">
+<li>Characterize aging of early hematopoiesis in term of subpopulation and intrinsec changes of hematopoietic stem and progenitor cells (HSPCs).</li>
+<li>Analyze the early differentiation process in young and old HSPCs to find its main actors (transcription factors).</li>
+<li>Build a logical regulatory graph of transcription factors to modelize HSC aging.</li>
+</ol>
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>We generated single cell RNA-seq (scRNA-seq) data from pools of young and old HSPCs, isolated from mouse BMs. We used Seurat <span class="citation">(Stuart et al. <a href="#ref-seurat">2018</a>)</span> and Monocle <span class="citation">(Qiu et al. <a href="#ref-qiu2017reversed">2017</a>)</span> R packages to repectively cluster the cells and order them along their differenciation process. We also analyse regulon activities with pyScenic <span class="citation">(Aibar et al. <a href="#ref-aibar2017scenic">2017</a>)</span> to identify transcription factor activity changes upon aging.</p>
+<p><img src="/Users/leonard/Nextcloud/sysbioTraing/posterImages/protocol3.png" alt="“Protocol”" style="width:100.0%" />
+<em>Overview of the analysis</em></p>
+<p> </p>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<p>Clustering resulted in 15 clusters divided in lineage primed and non-primed clusters. With aging an accumulation of HSCs to the more immature clusters is observed:</p>
+<p><img src="posterMarkdown_files/figure-html/umap-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>Aging markers were found mainly in non-primed clusters:</p>
+<p><img src="posterMarkdown_files/figure-html/aging-1.png" width="100%" height="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>HSPC differentiation trajectory shows a branching between a myeloid and a megakaryocyte-erythroid fate conserved with aging:</p>
+<p><img src="posterMarkdown_files/figure-html/monocle-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p> 
+ </p>
+<p>Regulons activities fit the differenciation process. However these transcription programs are strongly altered upon aging:</p>
+<p><img src="posterMarkdown_files/figure-html/regHm-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>Old HSCs cycle less than young ones. Both asymmetric and symmetric divisions are mainly distributed after the branching in the old cell trajectory contrary to the young one where a consistent pool of dividing cells is located just before the branching:
+<img src="posterMarkdown_files/figure-html/divQplot-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="perspectives" class="section level1">
+<h1>Perspectives</h1>
+<p>Build a <code>boolean model</code> centered on transcription factors controlling the molecular mechanisms that cause hematopoietic stem cell aging. To this aim, we will complete and specify existing models in the context of aging, by integrating our scRNA-seq analysis results.</p>
+<p><img src="/Users/leonard/Nextcloud/sysbioTraing/posterImages/perspectives.png" alt="“Protocol”" style="width:90.0%" />
+<em>Modeling strategy</em></p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-aibar2017scenic">
+<p>Aibar, Sara, Carmen Bravo González-Blas, Thomas Moerman, Hana Imrichova, Gert Hulselmans, Florian Rambow, Jean-Christophe Marine, et al. 2017. “SCENIC: Single-Cell Regulatory Network Inference and Clustering.” <em>Nature Methods</em> 14 (11). Nature Publishing Group: 1083.</p>
+</div>
+<div id="ref-qiu2017reversed">
+<p>Qiu, Xiaojie, Qi Mao, Ying Tang, Li Wang, Raghav Chawla, Hannah A Pliner, and Cole Trapnell. 2017. “Reversed Graph Embedding Resolves Complex Single-Cell Trajectories.” <em>Nature Methods</em> 14 (10). Nature Publishing Group: 979.</p>
+</div>
+<div id="ref-seurat">
+<p>Stuart, Tim, Andrew Butler, Paul Hoffman, Christoph Hafemeister, Efthymia Papalexi, William M Mauck III, Marlon Stoeckius, Peter Smibert, and Rahul Satija. 2018. “Comprehensive Integration of Single Cell Data.” <em>bioRxiv</em>. <a href="https://doi.org/10.1101/460147" class="uri">https://doi.org/10.1101/460147</a>.</p>
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<p>Single cell RNA-seq reveal alterations of <strong>transcriptional programs</strong> in HSCs upon <strong>aging</strong></p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=/Users/leonard/Nextcloud/sysbioTraing/posterImages/Logo/logoLuminy.png>
+<img id="main-img-center" src=/Users/leonard/Nextcloud/sysbioTraing/posterImages/qrcode.png>
+<img id="main-img-right" src=/Users/leonard/Nextcloud/sysbioTraing/posterImages/Logo/logosCRCMFondNoir.png>
+</div>
+</div>
+
+
+
+</body>
+</html>

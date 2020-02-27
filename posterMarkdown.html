@@ -369,7 +369,7 @@ span > #tab:mytable {
 
 <strong>L. Hérault</strong><sup> 1 2, <a class="orcid" href="https://orcid.org/0000-0001-6499-2991"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
 
-<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:leonard.herault@inserm.fr">leonard.herault@inserm.fr</a> <br>
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:leonard.herault@inserm.fr" class="email">leonard.herault@inserm.fr</a> <br>
      </h3>
 
 <h5 id="author_extra", class="author_extra">
@@ -399,70 +399,71 @@ span > #tab:mytable {
 </style>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Hematopoietic stem cells (HSCs) represent a rare population of cells residing in the Bone Marrow (BM) at the top of hematopoietic hierarchy. A critical balance is maintained between self-renewal and lineage differentiation of HSCs to maintain hematopoietic homeostasis. With aging, this balance is altered with an increase of long term HSCs <code>self-renewal</code> and a <code>myeloid biased</code> differentiation, which favors the appearance of myeloid leukemias and anemias. My thesis project aims to understand molecular mechanisms that cause this aged-related disequilibrium in the mouse.</p>
-<p><img src="posterImages/bioContext2.png" alt="“biologicalContext”" style="width:95.0%" />
+<p>Hematopoietic stem cells (HSCs) represent a rare population of cells residing in the Bone Marrow (BM) at the top of hematopoietic hierarchy. A critical balance is maintained between self-renewal and lineage differentiation of HSCs to maintain hematopoietic homeostasis. With aging, this balance is altered with an increase of <code>long term HSCs self-renewal</code> and a <code>myeloid biased</code> differentiation, which favors the appearance of myeloid leukemias and anemias. My thesis project aims to understand molecular mechanisms that cause this aged-related disequilibrium.</p>
+<p><img src="posterImages/bioContext.png" style="width:90.0%" alt="“biologicalContext”" />
 <em>Aging of mouse HSC pool</em></p>
 <div id="objectives" class="section level2">
 <h2>Objectives</h2>
 <ol style="list-style-type: decimal">
-<li>Characterize aging of early hematopoiesis in term of subpopulation and intrinsec changes of hematopoietic stem and progenitor cells (HSPCs).</li>
-<li>Analyze the early differentiation process in young and old HSPCs to find its main actors (transcription factors).</li>
-<li>Build a logical regulatory graph of transcription factors to modelize HSC aging.</li>
+<li>Characterize aging of early hematopoiesis in term of subpopulations and intrinsec changes of hematopoietic stem and progenitor cells (HSPCs).</li>
+<li>Analyze the early differenciation process in young and old HSPCs to find its main actors (transcription factors).</li>
+<li>Build a gene regulatory network to modelize HSC fate in young and old mice.</li>
 </ol>
+<p> </p>
 </div>
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
-<p>We generated single cell RNA-seq (scRNA-seq) data from pools of young and old HSPCs, isolated from mouse BMs. We used Seurat <span class="citation">(Stuart et al. <a href="#ref-seurat">2019</a>)</span> and Monocle <span class="citation">(Qiu et al. <a href="#ref-qiu2017reversed">2017</a>)</span> R packages to repectively cluster the cells and order them along their differentiation process. We also analyse regulon activities with pyScenic <span class="citation">(Aibar et al. <a href="#ref-aibar2017scenic">2017</a>)</span> to identify transcription factor activity changes upon aging.</p>
-<p><img src="posterImages/protocol.png" alt="“Protocol”" style="width:100.0%" />
+<p>We generated single cell RNA-seq data from pools of young and old HSPCs, isolated from mouse BMs. We used Seurat <span class="citation">(Stuart et al. <a href="#ref-seurat" role="doc-biblioref">2019</a>)</span> and Monocle <span class="citation">(Qiu et al. <a href="#ref-qiu2017reversed" role="doc-biblioref">2017</a>)</span> R packages to respectively cluster the cells and order them along their differentiation process. We also analyse regulon activities with pyScenic <span class="citation">(Aibar et al. <a href="#ref-aibar2017scenic" role="doc-biblioref">2017</a>)</span> to identify transcription factor activity changes upon aging.</p>
+<p><img src="posterImages/protocol3.png" style="width:90.0%" alt="“Protocol”" />
 <em>Overview of the analysis</em></p>
-<p> </p>
+<p> 
+ 
+ </p>
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
-<p>Clustering resulted in 15 clusters divided in lineage primed and non-primed clusters. With aging an accumulation of HSCs to the more immature clusters is observed:</p>
-<p><img src="posterMarkdown_files/figure-html/umap-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p> </p>
-<p>Aging markers were found mainly in non-primed clusters:</p>
-<p><img src="posterMarkdown_files/figure-html/aging-1.png" width="100%" height="80%" style="display: block; margin: auto;" /></p>
-<p> </p>
-<p>HSPC differentiation trajectory shows a branching between a myeloid and a megakaryocyte-erythroid fate conserved with aging:</p>
-<p><img src="posterMarkdown_files/figure-html/monocle-1.png" width="90%" style="display: block; margin: auto;" /></p>
-<p> </p>
-<p>Regulons activities fit the differentiation process. However these transcription programs are strongly altered upon aging:</p>
-<p><img src="posterMarkdown_files/figure-html/regHm-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p> </p>
-<p>Old HSCs cycle less than young ones. Both asymmetric and symmetric divisions are mainly distributed after the branching in the old cell trajectory contrary to the young one where a consistent pool of dividing cells is located just before the branching:
-<img src="posterMarkdown_files/figure-html/divQplot-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Clustering resulted in 15 clusters divided in lineage primed and non primed clusters. With aging an accumulation of HSCs to the more immature clusters is observed:</p>
+<p><img src="posterMarkdown_files/figure-html/umap-1.png" width="100%" style="display: block; margin: auto;" />
+ </p>
+<p>Gene expression is more altered upon aging in non-primed clusters with a lost of differentiation and a gain of hemostasis signatures:
+<img src="posterMarkdown_files/figure-html/aging-1.png" width="100%" height="80%" style="display: block; margin: auto;" /></p>
+<p>HSPC differentiation trajectory shows three paths toward primed T cells, primed neutrophils/mastocytes and primed megakaryocytes/erythrocytes:</p>
+<p><img src="posterMarkdown_files/figure-html/monocleGenePt-1.png" width="100%" style="display: block; margin: auto;" />
+ </p>
+<p>Cell cycle analysis along pseudotime highlights a delay in differentiation associated with cell cycle slowdown in aged condition:
+<img src="posterMarkdown_files/figure-html/monocleStream-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Regulon activities fit the differentiation process. However these transcription programs are altered upon aging:</p>
+<p><img src="posterMarkdown_files/figure-html/regHm-1.png" width="100%" style="display: block; margin: auto;" />
+ </p>
 </div>
-<div id="perspectives" class="section level1">
-<h1>Perspectives</h1>
-<p>We plan to build a <code>boolean model</code> centered on transcription factors controlling the molecular mechanisms that cause the HSC aging. To this aim, we will complete and specify existing models in the context of aging, by integrating our scRNA-seq analysis results.</p>
-<p><img src="posterImages/perspectives.png" alt="“Protocol”" style="width:90.0%" />
-<em>Modeling strategy</em></p>
+<div id="perspective" class="section level1">
+<h1>Perspective</h1>
+<p>Build a boolean model of gene regulatory network explaining the molecular mechanisms that cause the aged-related alteration of HSCs in the mouse. Compare the dynamic of the obtained model with the scRNA-seq data:</p>
+<p><img src="posterImages/flashPres.png" style="width:100.0%" /></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-aibar2017scenic">
-<p>Aibar, Sara, Carmen Bravo González-Blas, Thomas Moerman, Hana Imrichova, Gert Hulselmans, Florian Rambow, Jean-Christophe Marine, et al. 2017. “SCENIC: Single-Cell Regulatory Network Inference and Clustering.” <em>Nature Methods</em> 14 (11). Nature Publishing Group: 1083.</p>
+<p>Aibar, Sara, Carmen Bravo González-Blas, Thomas Moerman, Hana Imrichova, Gert Hulselmans, Florian Rambow, Jean-Christophe Marine, et al. 2017. “SCENIC: Single-Cell Regulatory Network Inference and Clustering.” <em>Nature Methods</em> 14 (11): 1083.</p>
 </div>
 <div id="ref-qiu2017reversed">
-<p>Qiu, Xiaojie, Qi Mao, Ying Tang, Li Wang, Raghav Chawla, Hannah A Pliner, and Cole Trapnell. 2017. “Reversed Graph Embedding Resolves Complex Single-Cell Trajectories.” <em>Nature Methods</em> 14 (10). Nature Publishing Group: 979.</p>
+<p>Qiu, Xiaojie, Qi Mao, Ying Tang, Li Wang, Raghav Chawla, Hannah A Pliner, and Cole Trapnell. 2017. “Reversed Graph Embedding Resolves Complex Single-Cell Trajectories.” <em>Nature Methods</em> 14 (10): 979.</p>
 </div>
 <div id="ref-seurat">
-<p>Stuart, Tim, Andrew Butler, Paul Hoffman, Christoph Hafemeister, Efthymia Papalexi, William M Mauck III, Yuhan Hao, Marlon Stoeckius, Peter Smibert, and Rahul Satija. 2019. “Comprehensive Integration of Single-Cell Data.” <em>Cell</em>. Elsevier.</p>
+<p>Stuart, Tim, Andrew Butler, Paul Hoffman, Christoph Hafemeister, Efthymia Papalexi, William M Mauck III, Yuhan Hao, Marlon Stoeckius, Peter Smibert, and Rahul Satija. 2019. “Comprehensive Integration of Single-Cell Data.” <em>Cell</em> 177 (7): 1888–1902.</p>
 </div>
 </div>
 </div>
 
 </div>
 <div class="main">
-<p>Single cell RNA-seq reveal alterations of <strong>transcriptional programs</strong> in HSCs upon <strong>aging</strong></p>
+<p>Single-cell RNA-seq shows a <strong>cell cycle</strong> alteration with a <strong>priming delay</strong> of HSCs upon aging</p>
 </div>
 <div class="main_bottom">
 <img id="main-img-left" src=posterImages/Logo/logoLuminy.png>
-<img id="main-img-center" src=posterImages/qrcode.png>
+<img id="main-img-center" src=posterImages/QR_code_poster.png>
 <img id="main-img-right" src=posterImages/Logo/logosCRCMFondNoir.png>
 </div>
 </div>
